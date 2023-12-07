@@ -1,10 +1,10 @@
 import Image from 'next/image'
 
-const Card = ({ title, description, columnNames, columnAlignment, data, footerLink, customClasses }) => {
+const Table = ({ title, description, columnNames, columnAlignment, data, footerLink, customClasses }) => {
   const alignment = columnAlignment || new Array(columnNames.length).fill('center')
 
   return (
-    <section className={`flex flex-col justify-between bg-backgroundDarkerGray rounded-lg shadow-xl overflow-hidden ${customClasses} h-full`}>
+    <section className={`relative flex flex-col justify-between bg-gradient-to-br from-backgroundDarkerGray to-transparent rounded-lg shadow-lg overflow-hidden ${customClasses} h-full group`}>
       <header className="bg-backgroundDarkerGray text-white p-4">
         <h2 className="text-lg font-bold">{title}</h2>
         <p className="text-[#7d7f84] text-xs">{description}</p>
@@ -62,7 +62,7 @@ const Card = ({ title, description, columnNames, columnAlignment, data, footerLi
   )
 }
 
-export default function Cards () {
+export default function Tables () {
   const statisticsData = [
     { champion: { name: 'Trundle', img: 'https://blitz-cdn.blitz.gg/blitz/lol/champion/48.webp' }, tier: 'A', winRate: '53.6%', change: '+4.7%' },
     { champion: { name: 'Ashe', img: 'https://blitz-cdn.blitz.gg/blitz/lol/champion/22.webp' }, tier: 'S', winRate: '57.2%', change: '+3.1%' },
@@ -81,7 +81,7 @@ export default function Cards () {
   return (
     <div className="flex justify-center items-center p-2">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl w-full">
-        <Card
+        <Table
             title="Statistics"
             description="Optimize your League of Legends gameplay..."
             columnNames={['Champion', 'Tier', 'Win Rate', 'Change']}
@@ -90,14 +90,14 @@ export default function Cards () {
             customClasses="max-h-[500px]"
             footerLink="#"
           />
-          <Card
-            title="Top Players"
-            description="Explore the best players in League of Legends..."
-            columnNames={['Player', 'Rank', 'Win Rate', 'KDA', 'Games Played']}
-            data={topPlayersData}
-            customClasses="max-h-[500px]"
-            footerLink="#"
-          />
+        <Table
+          title="Top Players"
+          description="Explore the best players in League of Legends..."
+          columnNames={['Player', 'Rank', 'Win Rate', 'KDA', 'Games Played']}
+          data={topPlayersData}
+          customClasses="max-h-[500px]"
+          footerLink="#"
+        />
       </div>
     </div>
   )
