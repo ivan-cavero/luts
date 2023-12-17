@@ -24,5 +24,3 @@ export default function Home () {
   </>
   )
 }
-
-export { reportWebVitals } from 'next-axiom'
