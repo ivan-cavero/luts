@@ -10,9 +10,12 @@ export const metadata = {
 }
 
 export default function RootLayout ({ children }) {
+  const showAxiom = process.env.AXIOM_ENABLED === 'true'
+  console.log(showAxiom)
+
   return (
     <html lang="en">
-      <AxiomWebVitals />
+      {showAxiom && <AxiomWebVitals />}
       <body className={inter.className}>{children}</body>
     </html>
   )

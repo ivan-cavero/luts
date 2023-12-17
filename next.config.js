@@ -1,6 +1,6 @@
 const { withAxiom } = require('next-axiom')
 
-const nextConfig = {
+let nextConfig = {
   webpack (config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -13,4 +13,8 @@ const nextConfig = {
   }
 }
 
-module.exports = withAxiom(nextConfig)
+if (process.env.AXIOM_ENABLED === 'true') {
+  nextConfig = withAxiom(nextConfig)
+}
+
+module.exports = nextConfig
