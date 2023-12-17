@@ -1,6 +1,10 @@
 import Image from 'next/image'
+import IconComponent from '../../utils/Icon'
+import { log } from 'next-axiom'
 
 export default function Login () {
+  log.debug('new sign-in challenge', { customerId: 32423, auth: 'session' })
+
   return (
     <div className="flex min-h-screen bg-backgroundDark text-textWhite">
       {/* Left Section: Login Form */}
@@ -24,33 +28,15 @@ export default function Login () {
           <div className="mt-8">
             <div className="flex justify-between my-2">
               <button className="bg-buttonAccent text-buttonTextWhite p-2 rounded-md shadow-md flex items-center justify-center w-28">
-                <img
-                  src="/icons/google-icon.svg"
-                  alt="Google"
-                  width={24}
-                  height={24}
-                  className="mr-2"
-                />
+                <IconComponent name="google" color="white" width="20" height="20" className="mr-2" />
                 Google
               </button>
               <button className="bg-[#7289DA] text-buttonTextWhite p-2 rounded-md shadow-md flex items-center justify-center w-28">
-                <img
-                  src="/icons/discord-tile.svg"
-                  alt="Discord"
-                  width={24}
-                  height={24}
-                  className="mr-2"
-                />
+                <IconComponent name="discord" color="white" width="20" height="20" className="mr-2" />
                 Discord
               </button>
               <button className="bg-[#DB1515] text-buttonTextWhite p-2 rounded-md shadow-md flex items-center justify-center w-28">
-                <img
-                  src="/icons/riot.svg"
-                  alt="Riot"
-                  width={24}
-                  height={24}
-                  className="mr-2 text-white"
-                />
+                <IconComponent name="riot" color="white" width="20" height="20" className="mr-2" />
                 Riot
               </button>
             </div>
