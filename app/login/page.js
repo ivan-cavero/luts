@@ -96,7 +96,7 @@ export default function Login () {
               {/* Enlace para Crear Cuenta */}
               <div className="text-sm mt-4 text-center">
                 <a href="#" className="font-medium text-accentBlue">
-                  Don't have an account? Create an account
+                  Don&apos;t have an account? Create an account
                 </a>
               </div>
             </form>

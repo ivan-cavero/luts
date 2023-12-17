@@ -2,6 +2,7 @@
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import IconComponent from '../utils/Icon'
 
 export default function Header () {
   const pathname = usePathname()
@@ -35,12 +36,7 @@ export default function Header () {
 
         <Link href="/login">
           <button className="flex items-center bg-buttonDark text-buttonTextWhite font-bold text-xs py-1 px-2 rounded shadow-md hover:bg-buttonAccent transition duration-300">
-            <img
-              src="/icons/user.svg"
-              alt="User"
-              className="filter invert"
-              style={{ width: '16px', height: '16px' }}
-            />
+            <IconComponent name="user" color="white" width="20" height="20" />
             <span className="ml-1">Sign Up</span>
           </button>
         </Link>
